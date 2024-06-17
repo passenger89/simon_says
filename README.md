@@ -13,7 +13,7 @@ A modern twist on the classic "Simon Says" game, built with HTML, CSS, and JavaS
 
 ## Demo
 
-You can play the game [here](#). (Replace with actual link)
+You can play the game [here](https://simonsaysapp.netlify.app). (Replace with actual link)
 
 ## Features
 
