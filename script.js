@@ -1,9 +1,25 @@
-/*
-TODO- If user succeeds with combination, the sequence should reset and extend by one value until a maximum of 20 values in length. (1 extra value each round).
-TODO- If the user fails a round, the level returns to 1 and the sequence resets to the first level. Button overlay with "retry?".
-TODO- If user completes all rounds, game should animate with a spin and combine to form a white light and display "You win!". 
-TODO- Game buttons should be disabled until game has started.
-*/
+import { audio } from "./audio.js";
+const beep = new Audio(audio.beep);
+const music = new Audio(audio.music);
+const level_up = new Audio(audio.level_up);
+
+$(document).ready(function () {
+  music.loop = true;
+  music.volume = 0.2;
+  music.play();
+
+  $(".btn_music").on("click", function () {
+    $(".btn_music").toggleClass("hidden");  
+  });
+  $(".btn_music_off").on("click", function () {
+    music.pause();
+  })
+  $(".btn_music_on").on("click", function () {
+    music.play();
+  })
+});
+
+
 
 const levels = {
   1: 4,
@@ -16,7 +32,7 @@ const levels = {
   8: 18,
 };
 
-level = 1;
+let level = 1;
 
 //! SECTION - ANIMATE OVERLAYS - START
 
@@ -128,6 +144,7 @@ function displaySequence(gameSequence) {
   for (let i = 0; i < gameSequence.length; i++) {
     setTimeout(() => {
       $(`.${gameSequence[i]}`).addClass("active");
+      beep.play();
       setTimeout(() => {
         $(`.${gameSequence[i]}`).removeClass("active");
       }, 500); //* Time the button stays active
@@ -143,6 +160,7 @@ function startLevel(level) {
 
 function nextRound(level) {
   animateLevel(level),
+  level_up.play();
     setTimeout(() => {
       startLevel(level);
     }, 2500);
@@ -163,6 +181,7 @@ $(".btn_play").on("click", () => {
 $(".btn").on("click", function () {
   //* Handles the active class toggle on user click
   $(this).addClass("active");
+  beep.play();
 
   setTimeout(() => {
     $(this).removeClass("active");

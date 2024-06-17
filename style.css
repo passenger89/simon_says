@@ -5,6 +5,10 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -12,6 +16,16 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+
+.btn_music {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 .game_wrapper {
