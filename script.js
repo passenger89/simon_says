@@ -172,7 +172,7 @@ $(".btn").on("click", function () {
     userSequenceCount++;
 
     if (userSequenceCount >= sequence.length) {
-      if (level < 2) {
+      if (level < 8) {
         level += 1;
         nextRound(level);
       } else {
@@ -201,30 +201,3 @@ $(".game_over_button").on("click", function () {
 });
 
 //! SECTION - PROCESS USER INPUT - END
-
-
-// Lock orientation function
-function lockOrientation(orientation) {
-  if (screen.orientation && screen.orientation.lock) {
-    screen.orientation.lock(orientation).then(() => {
-      console.log(`Orientation locked to ${orientation}`);
-    }).catch((error) => {
-      console.error(`Failed to lock orientation: ${error}`);
-    });
-  } else {
-    console.warn('Screen Orientation API is not supported by this browser.');
-  }
-}
-
-// Unlock orientation function
-function unlockOrientation() {
-  if (screen.orientation && screen.orientation.unlock) {
-    screen.orientation.unlock().then(() => {
-      console.log('Orientation unlocked');
-    }).catch((error) => {
-      console.error(`Failed to unlock orientation: ${error}`);
-    });
-  } else {
-    console.warn('Screen Orientation API is not supported by this browser.');
-  }
-}
