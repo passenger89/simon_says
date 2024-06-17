@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Says...</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./animation.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="game_wrapper">
+      <div class="btn green"></div>
+      <div class="btn red"></div>
+      <div class="btn yellow"></div>
+      <div class="btn blue"></div>
+    </div>
+
+    <!--! LEVEL (NUMBER)  ANIMATION OVERLAY -->
+
+    <div class="overlay level_start_overlay">
+      <h1 class="overlay_title level_start_title"></h1>
+    </div>
+
+    <div class="overlay start_game_overlay">
+    <button class="btn_play">Play!</button>
+    </div>
+
+    <div class="overlay game_over_overlay">
+      <button class="overlay_button game_over_button">Retry?</button>
+    </div>
+
+    <div class="celebration_overlay overlay">
+      <h1 class="celebration_title">You win!!!</h1>
+      <div class="party_popper" id="popper1"></div>
+      <div class="party_popper" id="popper2"></div>
+      <div class="party_popper" id="popper3"></div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
