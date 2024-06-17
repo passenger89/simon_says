@@ -2,6 +2,8 @@ import { audio } from "./audio.js";
 const beep = new Audio(audio.beep);
 const music = new Audio(audio.music);
 const level_up = new Audio(audio.level_up);
+const incorrect = new Audio(audio.incorrect);
+const cheering = new Audio(audio.cheering);
 
 $(document).ready(function () {
   music.loop = true;
@@ -53,6 +55,8 @@ function gameOver() {
 //! SECTION - CELEBRATION ANIMATION - START
 
 function celebrateWin() {
+  music.pause();
+  cheering.play();
   // Trigger the display of "YOU WIN!!!" overlay and animation
   $(".btn").each(function (index) {
     $(this).css({
@@ -191,7 +195,7 @@ $(".btn").on("click", function () {
     userSequenceCount++;
 
     if (userSequenceCount >= sequence.length) {
-      if (level < 8) {
+      if (level < 2) {
         level += 1;
         nextRound(level);
       } else {
@@ -205,6 +209,7 @@ $(".btn").on("click", function () {
       }
     }
   } else {
+    incorrect.play()
     level = 1;
     gameOver();
   }
