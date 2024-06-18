@@ -13,7 +13,7 @@ A modern twist on the classic "Simon Says" game, built with HTML, CSS, and JavaS
 
 ## Demo
 
-You can play the game [here](https://simonsaysapp.netlify.app). (Replace with actual link)
+You can play the game [here](https://simonsaysapp.netlify.app).
 
 ## Features
 
@@ -53,6 +53,5 @@ simon-says-game/
 ├── index.html           # Main HTML file
 ├── reset.css            # CSS reset file
 ├── script.js            # Main JavaScript file for game logic
-├── simulateWin.js       # JavaScript file for simulating a win (for testing)
 ├── style.css            # Main CSS file for styling the game
 └── README.md            # This README file
