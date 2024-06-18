@@ -195,7 +195,7 @@ $(".btn").on("click", function () {
     userSequenceCount++;
 
     if (userSequenceCount >= sequence.length) {
-      if (level < 2) {
+      if (level < 8) {
         level += 1;
         nextRound(level);
       } else {
